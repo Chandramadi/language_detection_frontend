@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axiosInstance from '../../axiosInstance';
+import axiosInstance from '../../helpers/axiosInstance'
 
 // initial state for the language detection slice
 // This state will be used to manage the loading state, data, and error for the language detection feature
@@ -22,7 +22,8 @@ export const uploadPdf = createAsyncThunk(
                     'Content-Type': 'multipart/form-data',
                 },
             });
-
+            
+            console.log('Response:', response); // Log the response data for debugging
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data || 'Something went wrong');

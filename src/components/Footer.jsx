@@ -19,7 +19,7 @@ const Footer = () => {
               }`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
               </svg>
-              <h3 className="text-xl font-bold">Bhasa</h3>
+              <h3 className="text-xl font-bold">Bhasha</h3>
             </div>
             <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-blue-200'}`}>
               Empowering global communication through advanced language detection technology.
@@ -138,7 +138,7 @@ const Footer = () => {
               </a>
             </div>
             <div className={`space-y-2 text-sm ${isDarkMode ? 'text-gray-300' : 'text-blue-200'}`}>
-              <p>Email: contact@bhasa.ai</p>
+              <p>Email: contact@bhasha.ai</p>
               <p>Phone: +1 (555) 123-4567</p>
               <p>Location: San Francisco, CA</p>
             </div>
@@ -149,7 +149,7 @@ const Footer = () => {
         <div className={`mt-12 pt-8 border-t ${isDarkMode ? 'border-gray-700' : 'border-blue-800'}`}>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-blue-200'}`}>
-              &copy; {new Date().getFullYear()} Bhasa. All rights reserved.
+              &copy; {new Date().getFullYear()} Bhasha. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="/privacy" className={`transition-colors duration-300 ${
