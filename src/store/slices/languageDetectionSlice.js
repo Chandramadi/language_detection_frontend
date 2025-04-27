@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axiosInstance from '../../helpers/axiosInstance'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axiosInstance from '../../helpers/axiosInstance';
 
 // initial state for the language detection slice
 // This state will be used to manage the loading state, data, and error for the language detection feature
@@ -34,7 +34,13 @@ export const uploadPdf = createAsyncThunk(
 const languageDetectionSlice = createSlice({
     name: 'languageDetection',
     initialState,
-    reducers: {},
+    reducers: {
+        resetState: (state) => {
+            state.isLoading = false;
+            state.data = null;
+            state.error = null;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(uploadPdf.pending, (state) => {
@@ -52,4 +58,5 @@ const languageDetectionSlice = createSlice({
     },
 });
 
+export const { resetState } = languageDetectionSlice.actions;
 export default languageDetectionSlice.reducer;

@@ -44,20 +44,6 @@ const Footer = () => {
                     : 'text-blue-200 hover:text-white'
                 }`}>About Us</a>
               </li>
-              <li>
-                <a href="/contact" className={`transition-colors duration-300 ${
-                  isDarkMode 
-                    ? 'text-gray-300 hover:text-white'
-                    : 'text-blue-200 hover:text-white'
-                }`}>Contact</a>
-              </li>
-              <li>
-                <a href="/documentation" className={`transition-colors duration-300 ${
-                  isDarkMode 
-                    ? 'text-gray-300 hover:text-white'
-                    : 'text-blue-200 hover:text-white'
-                }`}>Documentation</a>
-              </li>
             </ul>
           </div>
 
@@ -78,20 +64,6 @@ const Footer = () => {
                     ? 'text-gray-300 hover:text-white'
                     : 'text-blue-200 hover:text-white'
                 }`}>Text Language Detection</a>
-              </li>
-              <li>
-                <a href="/batch-processing" className={`transition-colors duration-300 ${
-                  isDarkMode 
-                    ? 'text-gray-300 hover:text-white'
-                    : 'text-blue-200 hover:text-white'
-                }`}>Batch Processing</a>
-              </li>
-              <li>
-                <a href="/api-docs" className={`transition-colors duration-300 ${
-                  isDarkMode 
-                    ? 'text-gray-300 hover:text-white'
-                    : 'text-blue-200 hover:text-white'
-                }`}>API Documentation</a>
               </li>
             </ul>
           </div>
@@ -139,8 +111,8 @@ const Footer = () => {
             </div>
             <div className={`space-y-2 text-sm ${isDarkMode ? 'text-gray-300' : 'text-blue-200'}`}>
               <p>Email: contact@bhasha.ai</p>
-              <p>Phone: +1 (555) 123-4567</p>
-              <p>Location: San Francisco, CA</p>
+              <p>Phone: +91 9898989898</p>
+              <p>Location: Bangalore, India</p>
             </div>
           </div>
         </div>

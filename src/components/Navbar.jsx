@@ -45,15 +45,10 @@ const Navbar = () => {
                   <a href="/text-detection" className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-300">
                     Text Language Detection
                   </a>
-                  <a href="/batch-processing" className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors duration-300">
-                    Batch Processing
-                  </a>
                 </div>
               )}
             </div>
-            <a href="/documentation" className="text-white hover:text-blue-200 transition-colors duration-300 font-medium">Documentation</a>
             <a href="/about" className="text-white hover:text-blue-200 transition-colors duration-300 font-medium">About</a>
-            <a href="/contact" className="text-white hover:text-blue-200 transition-colors duration-300 font-medium">Contact</a>
             
             {/* Theme Toggle Button */}
             <button
@@ -108,10 +103,7 @@ const Navbar = () => {
             <a href="/" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">Home</a>
             <a href="/pdf-detection" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">PDF Detection</a>
             <a href="/text-detection" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">Text Detection</a>
-            <a href="/batch-processing" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">Batch Processing</a>
-            <a href="/documentation" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">Documentation</a>
             <a href="/about" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">About</a>
-            <a href="/contact" className="block text-white hover:text-blue-200 transition-colors duration-300 font-medium">Contact</a>
           </div>
         )}
       </div>
