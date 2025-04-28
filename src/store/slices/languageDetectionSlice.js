@@ -22,8 +22,19 @@ export const uploadPdf = createAsyncThunk(
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            
-            console.log('Response:', response); // Log the response data for debugging
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.response?.data || 'Something went wrong');
+        }
+    }
+);
+
+export const detectText = createAsyncThunk(
+    'languageDetection/detectText',
+    async (text, { rejectWithValue }) => {
+        try {
+            const response = await axiosInstance.post('/predict', { text });
+            console.log('Response:', response.data); // Log the response data
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data || 'Something went wrong');
@@ -43,6 +54,7 @@ const languageDetectionSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            // PDF upload cases
             .addCase(uploadPdf.pending, (state) => {
                 state.isLoading = true;
                 state.error = null;
@@ -52,6 +64,19 @@ const languageDetectionSlice = createSlice({
                 state.data = action.payload;
             })
             .addCase(uploadPdf.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            })
+            // Text detection cases
+            .addCase(detectText.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+            .addCase(detectText.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.data = action.payload;
+            })
+            .addCase(detectText.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });

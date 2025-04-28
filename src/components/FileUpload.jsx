@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { forwardRef, useImperativeHandle, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '../context/ThemeContext';
 import { uploadPdf } from '../store/slices/languageDetectionSlice';
 
-const FileUpload = () => {
+const FileUpload = forwardRef((props, ref) => {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState('');
   const [isDragging, setIsDragging] = useState(false);
   const { isDarkMode } = useTheme();
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.languageDetection);
+
+  useImperativeHandle(ref, () => ({
+    resetUpload: () => {
+      setFile(null);
+      setMessage('');
+      setIsDragging(false);
+    }
+  }));
 
   const handleFileChange = (e) => {
     if (isLoading) return;
@@ -157,7 +165,7 @@ const FileUpload = () => {
           )}
           <button
             type="submit"
-            className={`w-full py-3 px-6 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-[1.02] ${
+            className={`w-full py-3 px-6 rounded-lg text-white font-semibold transition-all duration-300 transform hover:scale-[1.02] cursor-pointer ${
               file && !isLoading
                 ? isDarkMode
                   ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700'
@@ -174,6 +182,6 @@ const FileUpload = () => {
       </div>
     </div>
   );
-};
+});
 
 export default FileUpload;

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '../context/ThemeContext';
 import { resetState } from '../store/slices/languageDetectionSlice';
 
-const LanguageResults = () => {
+const LanguageResults = ({ fileUploadRef }) => {
   const { data, isLoading } = useSelector((state) => state.languageDetection);
   const { isDarkMode } = useTheme();
   const dispatch = useDispatch();
@@ -11,6 +11,7 @@ const LanguageResults = () => {
 
   const handleReset = () => {
     dispatch(resetState());
+    fileUploadRef.current?.resetUpload();
   };
 
   return (
